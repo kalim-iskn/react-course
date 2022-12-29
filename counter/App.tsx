@@ -12,11 +12,14 @@ class Counter {
     }
 
     inc() {
-        this.count++;
+        if (this.count == 20) {
+            return;
+        }
+        this.count += 2;
     }
 
     dec() {
-        this.count--;
+        this.count -= 2;
     }
 
     fontSize() {
@@ -38,6 +41,7 @@ const App = observer(() => (
                 onPress={() => {
                     counter.inc()
                 }}
+                disabled={counter.getCount() >= 20 ? true : false}
             >
                 <Text>+</Text>
             </TouchableOpacity>
@@ -57,4 +61,4 @@ const App = observer(() => (
     </View>
 ))
 
-export default App
+export default App;

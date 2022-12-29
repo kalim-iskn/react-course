@@ -4,7 +4,8 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#ffffff',
-        padding: 10
+        padding: 10,
+        marginBottom: 50
     },
     containerTaskInfo: {
         flex: 1,

@@ -1,5 +1,14 @@
 import {StatusBar} from 'expo-status-bar';
-import {Button, FlatList, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {
+    Button,
+    FlatList,
+    KeyboardAvoidingView,
+    SafeAreaView,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View
+} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {Colors} from "react-native/Libraries/NewAppScreen";
@@ -89,7 +98,7 @@ const TaskListScreen = observer((
         return index.toString();
     };
 
-    return <View style={styles.container}>
+    return <KeyboardAvoidingView style={styles.container} behavior="padding">
         <FlatList
             data={Store.tasks}
             keyExtractor={(item, index) => keyExtractor(index)}
@@ -118,7 +127,7 @@ const TaskListScreen = observer((
             title="Add new task"
             onPress={() => addTask()}></Button>
         <StatusBar style="auto"/>
-    </View>
+    </KeyboardAvoidingView>
 })
 
 
